@@ -55,8 +55,32 @@
   font-weight: normal
   margin-bottom: 30px
 
-=col
 
+=col($color)
+  background: ($color)
+
+=line
+  display: inline-block
+  content: ''
+  background: #387d89
+  height: 1px
+  width: 10%
+  position: absolute
+  top: 50%
+
+=borderColor ($color)
+  border-top: 2px solid ($color)
+
+=triangle($color)
+  &::after
+    content: ''
+    position: absolute
+
+    width: 0
+    height: 0
+    border-style: solid
+    border-width: 0 5px 20px 5px
+    border-color: transparent transparent #007bff transparent
 
 =btn($color)
   border-style: solid
@@ -69,9 +93,23 @@
   text-transform: uppercase
   line-height: 1.2
   text-align: center
-  padding: 10px 10px
+  padding: 13px 26px
   background: $color
   display: inline-block
+
+=radius
+  -webkit-border-radius: 50%
+  -moz-border-radius: 50%
+  border-radius: 50%
+
+=input
+  border: 2px solid #387d89
+  padding: 5px
+  background: #245963
+  width: 270px
+  height: 46px
+
+
 $tablet-up: '(min-width: 600px)'
 $desktop-up: '(min-width: 900px)'
 =tablet

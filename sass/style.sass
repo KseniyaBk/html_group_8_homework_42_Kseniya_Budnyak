@@ -8,6 +8,12 @@ $colorStatic: #ffffff
   margin: 0
   padding: 0
 
+%flex
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  height: 100%
+
 body
   background: #29606b
   font-family: $fontSet
@@ -43,8 +49,10 @@ header
   font-size: 25px
   line-height: 1.2
   float: left
+
 nav
   float: right
+  display: inline-block
 /**********************MENU******************/
 //.wrap
 //  height: 100%
@@ -195,40 +203,190 @@ div.square.expand
     +fontStyle(31px)
     letter-spacing: 3px
 
-
 .btn
   color: $colorStatic
-  +border(2px, $colorStatic)
-  background: #29606B
-  width: 142px
-  height: 57px
+  +btn(rgba(41,96,107,0.4))
+  //+border(2px, $colorStatic)
+
+
+
+main
+  margin-top: -80px
+/******************info-block****************************/
+.info-block
+  @extend %flex
+
+.col
+  max-width: 585px
+  text-align: center
+  box-sizing: border-box
+  padding: 59px 83px
+  h2
+    +fontStyle(29px)
+  p
+    +fontStyle(16px)
+    font-family: 'Source Sans Pro'
+    text-transform: none
+.icon
+  display: inline-block
+  width: 100px
+  height: 100px
+  background: #ffffff
+  border-radius: 50%
+
+
+$colorsBg: ('chat':#e84c3d, 'pencil': #fdbd1f,'crown': #1bbc9b, 'user': #9b58b5)
+
+@each $colorName, $colorHex in $colorsBg
+  .col-#{$colorName}
+    +col($colorHex)
+
+$colors: ('red':#e84c3d, 'yellow': #fdbd1f,'green': #1bbc9b)
+
+@each $colorName, $colorHex in $colors
+  .btn-#{$colorName}
+    +btn($colorHex)
+  //.box-#{$colorHex}
+  //  border-top: 2px solid red
+
+/*******************Title********************/
+.title
+  margin-top: 80px
+  margin-bottom: 70px
+  h3
+    +fontStyle(29px)
+  p
+    position: relative
+
+    +fontStyle(21px)
+    &::before
+      +line
+      left: 0
+      margin-left: 246px
+    &::after
+      +line
+      right: 0
+      margin-right: 246px
+
+
+/*****************************blog-box*****************/
+
+.blog-box
+  @extend %flex
+  div
+    background: #245963
+    max-width: 370px
+    +fontStyle(16px)
+    color: #76b2be
+    text-transform: none
+    font-family: 'Source Sans Pro'
+    padding-bottom: 52px
+    span img
+      +radius
+      margin-top: 30px
+      margin-bottom: 38px
+    p
+      margin: 0 40px 40px
+
+$colorBorder: ('red':#e84c3d, 'yellow': #fdbd1f,'green': #1bbc9b)
+
+@each $colorName, $colorHex in $colorBorder
+  .box-#{$colorHex}
+    +borderColor($colorHex)
+
+.from-box
+  text-align: center
+  display: flex
+  justify-content: center
+  height: 100%
+
+  .wrapper
+    width: 572px
+    text-align: center
+    p
+      &::after
+        width: 12.2%
+        margin-right: 40px
+      &::before
+        width: 12.2%
+        margin-left: 40px
+    input[type=text]
+      +input
+    input[type=email]
+      +input
+    textarea
+      margin: 30px 0
+      width: 100%
+      border: 2px solid #387d89
+      background: #245963
+    input[type=submit]
+      +btn(#245963)
+      border-color: #387d89
+      margin-bottom: 90px
+
+
+.title
+  text-align: center
+
+.icon-mail
+  background: url("../images/contact.svg") #ffffff
+  background-repeat: no-repeat
+  //background-position: center center
+  width: 100px
+  height: 100px
+  +radius
+  text-align: center
+  display: inline-block
+
+/***********************FOOTER****************/
+footer
+  background: #245963
+  padding: 40px 0
+  P
+  font-size: 16px
+  font-family: "SourceSansPro"
+  color: rgb(255, 255, 255)
+  line-height: 1.625
+  text-align: center
+  span
+    color: #fdbd1f
+.contact
+  border-bottom: 1px solid #387d89
 
 /******************MEDIA SCREEN***************/
 +tablet
   .menu
+    position: static
     .square
       display: none
     .burger
       display: none
   .menu ul
     display: inline-block
+    position: static
     li
       display: inline-block
       opacity: 1
       +borderBox
       margin: 0 2px
+      position: static
+      width: auto
       a
         padding: 0 25px
         +borderBox
         letter-spacing: 0
-        display: block
+        display: inline-block
         +border(2px, transparent)
+        position: static
 
         &:hover
           +borderBox
           color: $colorStatic
           +border(2px, $colorStatic)
-
-
-
+  input[type=text]
+    margin-right: 25px
 +desktop
+  .blog-box div
+    margin-right: 25px
+    &:last-child
+      margin-right: 0

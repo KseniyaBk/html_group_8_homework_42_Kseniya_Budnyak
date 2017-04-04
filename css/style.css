@@ -1,5 +1,7 @@
 body, h1, p, ul, li { margin: 0; padding: 0; }
 
+.info-block, .blog-box { display: flex; flex-wrap: wrap; justify-content: center; height: 100%; }
+
 body { background: #29606b; font-family: "Fjalla One", sans-serif, "Source Sans Pro", sans-serif; }
 
 .container { max-width: 1170px; width: 100%; margin: 0 auto; box-sizing: border-box; }
@@ -13,7 +15,7 @@ header { border-style: solid; border-width: 1px; border-color: #2a6c78; backgrou
 
 .logo { color: #ffffff; font-size: 25px; line-height: 1.2; float: left; }
 
-nav { float: right; }
+nav { float: right; display: inline-block; }
 
 /**********************MENU***************** */
 .menu a { color: #ffffff; font-size: 14px; font-weight: bold; display: inline-block; padding: 10px; }
@@ -61,12 +63,76 @@ div.square.expand { width: 100%; height: 600px; top: 0; right: 0; -webkit-transi
 .promo h1 { font-size: 41px; color: #ffffff; text-transform: uppercase; line-height: 1.2; text-align: center; font-weight: normal; margin-bottom: 30px; letter-spacing: 2px; }
 .promo p { font-size: 31px; color: #ffffff; text-transform: uppercase; line-height: 1.2; text-align: center; font-weight: normal; margin-bottom: 30px; letter-spacing: 3px; }
 
-.btn { color: #ffffff; border-style: solid; border-width: 2px; border-color: #ffffff; background: #29606B; width: 142px; height: 57px; }
+.btn { color: #ffffff; border-style: solid; border-width: 2px; border-color: white; color: #ffffff; font-size: 15px; font-family: "Fjalla One"; text-decoration: none; text-transform: uppercase; line-height: 1.2; text-align: center; padding: 13px 26px; background: rgba(41, 96, 107, 0.4); display: inline-block; }
+
+main { margin-top: -80px; }
+
+/******************info-block*************************** */
+.col { max-width: 585px; text-align: center; box-sizing: border-box; padding: 59px 83px; }
+.col h2 { font-size: 29px; color: #ffffff; text-transform: uppercase; line-height: 1.2; text-align: center; font-weight: normal; margin-bottom: 30px; }
+.col p { font-size: 16px; color: #ffffff; text-transform: uppercase; line-height: 1.2; text-align: center; font-weight: normal; margin-bottom: 30px; font-family: "Source Sans Pro"; text-transform: none; }
+
+.icon { display: inline-block; width: 100px; height: 100px; background: #ffffff; border-radius: 50%; }
+
+.col-chat { background: #e84c3d; }
+
+.col-pencil { background: #fdbd1f; }
+
+.col-crown { background: #1bbc9b; }
+
+.col-user { background: #9b58b5; }
+
+.btn-red { border-style: solid; border-width: 2px; border-color: white; color: #ffffff; font-size: 15px; font-family: "Fjalla One"; text-decoration: none; text-transform: uppercase; line-height: 1.2; text-align: center; padding: 13px 26px; background: #e84c3d; display: inline-block; }
+
+.btn-yellow { border-style: solid; border-width: 2px; border-color: white; color: #ffffff; font-size: 15px; font-family: "Fjalla One"; text-decoration: none; text-transform: uppercase; line-height: 1.2; text-align: center; padding: 13px 26px; background: #fdbd1f; display: inline-block; }
+
+.btn-green { border-style: solid; border-width: 2px; border-color: white; color: #ffffff; font-size: 15px; font-family: "Fjalla One"; text-decoration: none; text-transform: uppercase; line-height: 1.2; text-align: center; padding: 13px 26px; background: #1bbc9b; display: inline-block; }
+
+/*******************Title******************* */
+.title { margin-top: 80px; margin-bottom: 70px; }
+.title h3 { font-size: 29px; color: #ffffff; text-transform: uppercase; line-height: 1.2; text-align: center; font-weight: normal; margin-bottom: 30px; }
+.title p { position: relative; font-size: 21px; color: #ffffff; text-transform: uppercase; line-height: 1.2; text-align: center; font-weight: normal; margin-bottom: 30px; }
+.title p::before { display: inline-block; content: ""; background: #387d89; height: 1px; width: 10%; position: absolute; top: 50%; left: 0; margin-left: 246px; }
+.title p::after { display: inline-block; content: ""; background: #387d89; height: 1px; width: 10%; position: absolute; top: 50%; right: 0; margin-right: 246px; }
+
+/*****************************blog-box**************** */
+.blog-box div { background: #245963; max-width: 370px; font-size: 16px; color: #ffffff; text-transform: uppercase; line-height: 1.2; text-align: center; font-weight: normal; margin-bottom: 30px; color: #76b2be; text-transform: none; font-family: "Source Sans Pro"; padding-bottom: 52px; }
+.blog-box div span img { -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; margin-top: 30px; margin-bottom: 38px; }
+.blog-box div p { margin: 0 40px 40px; }
+
+.box-#e84c3d { border-top: 2px solid #e84c3d; }
+
+.box-#fdbd1f { border-top: 2px solid #fdbd1f; }
+
+.box-#1bbc9b { border-top: 2px solid #1bbc9b; }
+
+.from-box { text-align: center; display: flex; justify-content: center; height: 100%; }
+.from-box .wrapper { width: 572px; text-align: center; }
+.from-box .wrapper p::after { width: 12.2%; margin-right: 40px; }
+.from-box .wrapper p::before { width: 12.2%; margin-left: 40px; }
+.from-box .wrapper input[type=text] { border: 2px solid #387d89; padding: 5px; background: #245963; width: 270px; height: 46px; }
+.from-box .wrapper input[type=email] { border: 2px solid #387d89; padding: 5px; background: #245963; width: 270px; height: 46px; }
+.from-box .wrapper textarea { margin: 30px 0; width: 100%; border: 2px solid #387d89; background: #245963; }
+.from-box .wrapper input[type=submit] { border-style: solid; border-width: 2px; border-color: white; color: #ffffff; font-size: 15px; font-family: "Fjalla One"; text-decoration: none; text-transform: uppercase; line-height: 1.2; text-align: center; padding: 13px 26px; background: #245963; display: inline-block; border-color: #387d89; margin-bottom: 90px; }
+
+.title { text-align: center; }
+
+.icon-mail { background: url("../images/contact.svg") #ffffff; background-repeat: no-repeat; width: 100px; height: 100px; -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%; text-align: center; display: inline-block; }
+
+/***********************FOOTER*************** */
+footer { background: #245963; padding: 40px 0; font-size: 16px; font-family: "SourceSansPro"; color: white; line-height: 1.625; text-align: center; }
+footer span { color: #fdbd1f; }
+
+.contact { border-bottom: 1px solid #387d89; }
 
 /******************MEDIA SCREEN************** */
-@media screen and (min-width: 600px) { .menu .square { display: none; }
+@media screen and (min-width: 600px) { .menu { position: static; }
+  .menu .square { display: none; }
   .menu .burger { display: none; }
-  .menu ul { display: inline-block; }
-  .menu ul li { display: inline-block; opacity: 1; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; margin: 0 2px; }
-  .menu ul li a { padding: 0 25px; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; letter-spacing: 0; display: block; border-style: solid; border-width: 2px; border-color: transparent; }
-  .menu ul li a:hover { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; color: #ffffff; border-style: solid; border-width: 2px; border-color: #ffffff; } }
+  .menu ul { display: inline-block; position: static; }
+  .menu ul li { display: inline-block; opacity: 1; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; margin: 0 2px; position: static; width: auto; }
+  .menu ul li a { padding: 0 25px; box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; letter-spacing: 0; display: inline-block; border-style: solid; border-width: 2px; border-color: transparent; position: static; }
+  .menu ul li a:hover { box-sizing: border-box; -webkit-box-sizing: border-box; -moz-box-sizing: border-box; color: #ffffff; border-style: solid; border-width: 2px; border-color: #ffffff; }
+  input[type=text] { margin-right: 25px; } }
+@media screen and (min-width: 900px) { .blog-box div { margin-right: 25px; }
+  .blog-box div:last-child { margin-right: 0; } }
