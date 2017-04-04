@@ -1,0 +1,234 @@
+@import _mixins
+
+$fontSet: 'Fjalla One', sans-serif, 'Source Sans Pro', sans-serif
+$colorSet: #41abb7
+$colorStatic: #ffffff
+
+%resetIndent
+  margin: 0
+  padding: 0
+
+body
+  background: #29606b
+  font-family: $fontSet
+  @extend %resetIndent
+
+.container
+  max-width: 1170px
+  width: 100%
+  margin: 0 auto
+  box-sizing: border-box
+
+h1, p, ul, li
+  @extend %resetIndent
+
+a
+  text-decoration: none
+
+li
+  list-style: none
+
+/******************HEADER******************/
+header
+  +border(1px, #2a6c78)
+  background: rgba(42, 108, 120, 0.4)
+  position: absolute
+  max-width: 1170px
+  width: 100%
+  padding: 29px
+  +borderBox
+
+.logo
+  color: $colorStatic
+  font-size: 25px
+  line-height: 1.2
+  float: left
+nav
+  float: right
+/**********************MENU******************/
+//.wrap
+//  height: 100%
+//  width: 100%
+//  //overflow: hidden
+//  position: absolute
+//  top: 0
+//  right: 0
+
+.menu
+  a
+    color: $colorStatic
+    font-size: 14px
+    font-weight: bold
+    display: inline-block
+    padding: 10px
+    &:hover
+      +border(1px, $colorSet)
+      color: $colorSet
+
+.burger
+  background: transparent
+  color: $colorStatic
+  height: 30px
+  width: 40px
+  cursor: pointer
+  position: absolute
+  top: 30%
+  right: 26px
+  z-index: 2
+
+  div.x,
+  div.y,
+  div.z
+    position: absolute
+    margin: 3px
+    background: $colorStatic
+    +borderRadius(2px)
+    +transition(all 200ms ease-out)
+
+div.x, div.y, div.z
+  height: 4px
+  width: 34px
+
+div.y
+  top: 19px
+
+div.z
+  top: 10px
+
+div.collapse
+  top: 20px
+  background: $colorStatic
+  +transition(all 70ms ease-out)
+
+div.rotate30
+  +rotate(30)
+  +transition(all 50ms ease-out)
+
+div.rotate150
+  +rotate(150)
+  +transition(all 50ms ease-out)
+
+div.rotate45
+  +rotate(45)
+  +transition(all 100ms ease-out)
+
+div.rotate135
+  +rotate(135)
+  +transition(all 100ms ease-out)
+
+//div.navbar
+//  background: $colorStatic
+
+div.square
+  width: 0
+  height: 0
+  position: absolute
+  top: 35px
+  right: 36px
+  //+gradient
+  background: #29606b
+  opacity: 0.98
+  +transition(all 300ms cubic-bezier(0.000, 0.995, 0.990, 1.000))
+
+div.square.expand
+  width: 100%
+  height: 600px
+  top: 0
+  right: 0
+  +transition(all 400ms cubic-bezier(0.000, 0.995, 0.990, 1.000))
+//
+
+.menu ul li
+  list-style: none
+  position: absolute
+  top: 50px
+  right: 0
+  opacity: 0
+  width: 320px
+  text-align: center
+  font-size: 0
+  +transition(all 70ms cubic-bezier(0.000, 0.995, 0.990, 1.000))
+
+.menu ul li a
+  background: transparent
+  text-transform: uppercase
+  letter-spacing: 3px
+
+.menu li.animate
+  font-size: 21px
+  opacity: 1
+  +transition(all 150ms cubic-bezier(0.000, 0.995, 0.990, 1.000))
+
+.menu li.animate:nth-of-type(1)
+  top: 120px
+  transition-delay: 0.0s
+
+.menu li.animate:nth-of-type(2)
+  top: 190px
+  transition-delay: 0.03s
+
+.menu li.animate:nth-of-type(3)
+  top: 260px
+  transition-delay: 0.06s
+
+.menu li.animate:nth-of-type(4)
+  top: 330px
+  transition-delay: 0.09s
+
+/*********************PROMO*********************/
+.promo
+  padding-top: 225px
+  padding-bottom: 200px
+  background: #245963
+  background: url("../images/promo.jpg")
+  background-repeat: no-repeat
+  background-position: center center
+  background-size: cover
+  color: $colorStatic
+  text-align: center
+
+  h1
+    +fontStyle(41px)
+    letter-spacing: 2px
+
+  p
+    +fontStyle(31px)
+    letter-spacing: 3px
+
+
+.btn
+  color: $colorStatic
+  +border(2px, $colorStatic)
+  background: #29606B
+  width: 142px
+  height: 57px
+
+/******************MEDIA SCREEN***************/
++tablet
+  .menu
+    .square
+      display: none
+    .burger
+      display: none
+  .menu ul
+    display: inline-block
+    li
+      display: inline-block
+      opacity: 1
+      +borderBox
+      margin: 0 2px
+      a
+        padding: 0 25px
+        +borderBox
+        letter-spacing: 0
+        display: block
+        +border(2px, transparent)
+
+        &:hover
+          +borderBox
+          color: $colorStatic
+          +border(2px, $colorStatic)
+
+
+
++desktop

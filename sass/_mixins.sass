@@ -1,0 +1,82 @@
+=sizes ($sizeW, $sizeH)
+  width: $sizeW
+  height: $sizeH
+
+
+=borderBox
+  box-sizing: border-box
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+
+
+=border($borderSize, $colorBorder)
+  border-style: solid
+  border-width: $borderSize
+  border-color: $colorBorder
+
+=borderRadius($radius)
+  border-radius: $radius
+  -webkit-border-radius: $radius
+  -moz-border-radius: $radius
+  -o-border-radius: $radius
+
+
+=gradient
+  background: -moz-linear-gradient(45deg, rgba(153,153,153,0) 0%, rgba(217,217,217,0) 63%, rgba(254,254,254,1) 99%, rgba(255,255,255,1) 100%) /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, rgba(153,153,153,0) 0%,rgba(217,217,217,0) 63%,rgba(254,254,254,1) 99%,rgba(255,255,255,1) 100%) /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, rgba(153,153,153,0) 0%,rgba(217,217,217,0) 63%,rgba(254,254,254,1) 99%,rgba(255,255,255,1) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00999999', endColorstr='#ffffff',GradientType=1 ) /* IE6-9 fallback on horizontal gradient */
+
+
+
+=transition ($transitionProperty)
+  -webkit-transition: $transitionProperty
+  -moz-transition: $transitionProperty
+  -o-transition: $transitionProperty
+  transition: $transitionProperty
+
+=transform ($transforms)
+  -moz-transform: $transforms
+  -o-transform: $transforms
+  -ms-transform: $transforms
+  -webkit-transform: $transforms
+  transform: $transforms
+
+=rotate ($deg)
+  @include transform(rotate(#{$deg}deg))
+
+
+=fontStyle ($fontSize)
+  font-size: $fontSize
+  color: $colorStatic
+  text-transform: uppercase
+  line-height: 1.2
+  text-align: center
+  font-weight: normal
+  margin-bottom: 30px
+
+=col
+
+
+=btn($color)
+  border-style: solid
+  border-width: 2px
+  border-color: rgb(255, 255, 255)
+  color: #ffffff
+  font-size: 15px
+  font-family: 'Fjalla One'
+  text-decoration: none
+  text-transform: uppercase
+  line-height: 1.2
+  text-align: center
+  padding: 10px 10px
+  background: $color
+  display: inline-block
+$tablet-up: '(min-width: 600px)'
+$desktop-up: '(min-width: 900px)'
+=tablet
+  @media screen and #{$tablet-up}
+    @content
+=desktop
+  @media screen and #{$desktop-up}
+    @content
